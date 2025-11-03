@@ -3,7 +3,8 @@ import os
 import pytest
 from playwright.sync_api import Browser, BrowserContext, Page, sync_playwright
 
-from aqa.enums import BrowserType
+from aqa.config.device_config import DeviceConfig
+from aqa.utils.enums import BrowserType, DeviceType
 
 
 @pytest.fixture(scope="session")
@@ -33,10 +34,26 @@ def browser(request, playwright_instance) -> Browser:
     browser.close()
 
 
+@pytest.fixture(params=[device.value for device in DeviceType])
+def device_type(request) -> DeviceType:
+    """Parametrized fixture for different device types.
+    
+    Run all device types: pytest
+    Run desktop only: pytest -k desktop
+    Run mobile only: pytest -k mobile
+    """
+    return DeviceType(request.param)
+
+
 @pytest.fixture
-def context(browser: Browser) -> BrowserContext:
-    """Create a new browser context for each test."""
-    context = browser.new_context()
+def context(browser: Browser, device_type: DeviceType) -> BrowserContext:
+    """Create a new browser context for each test with device configuration.
+    
+    Automatically applies viewport and device emulation settings.
+    """
+    # Get context options with properly nested viewport
+    context_options = DeviceConfig.get_context_options(device_type)
+    context = browser.new_context(**context_options)
     yield context
     context.close()
 

@@ -2,5 +2,5 @@ Pleased QA-Home Test - AQA.pdf
 .python-version
 .vscode/
 .pytest_cache
-API_TESTING.md
+DEVICE_TESTING.md
 .env

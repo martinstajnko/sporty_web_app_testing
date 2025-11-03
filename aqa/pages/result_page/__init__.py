@@ -1,1 +1,0 @@
-# Result page objects

@@ -7,8 +7,20 @@ class BrowserType(Enum):
     WEBKIT = "webkit"
 
 
+class DeviceType(Enum):
+    DESKTOP = "desktop"
+    MOBILE = "mobile"
+    TABLET = "tablet"
+
+
 class Urls(Enum):
     TWITCH_HOME = "https://www.twitch.tv/"
+
+
+class WaitStates(Enum):
+    LOAD = "load" #  Wait until the page load event fires (basic HTML loaded)
+    DOMCONTENTLOADED = "domcontentloaded" # Wait until DOM is fully parsed
+    NETWORKIDLE = "networkidle" # Wait until all network requests finish (images, API calls,...)
 
 
 class APIEndpoints(Enum):
