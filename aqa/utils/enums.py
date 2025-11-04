@@ -1,3 +1,5 @@
+""" Enums for various constants used in the AQA framework."""
+
 from enum import Enum
 
 

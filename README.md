@@ -1,18 +1,21 @@
 # Sporty Home Test: Web App Testing 
+
+## 🎥 Demo
+
+![Test Running on Chrome Mobile](demo.gif)
+
+*Test execution showing Twitch search automation on Chrome mobile viewport*
+
 ## Overview
 Project contains UI test, using Playwright Framework.
 Main package is `aqa`, containing page objects, configuration, and utilities.
-Tests are located in the `tests` directory, separated into `ui_tests` and `api_tests`.
-
-1. UI tests are organized to allow running by device type and browser.
-2. API tests utilize a base client for common HTTP methods and session management.
+Tests are located in the `tests` directory, and are organized to allow running by device type and browser.
 
 ## Requirements
-To run Sporty Home Test, ensure that you have the following:
+To be able to run test, ensure that you have the following:
 
-- Python 3.11.4 or newer: Make sure you have Python installed on your system.
-- Poetry: Use Poetry for packaging and dependency management. Refer to the Poetry documentation for installation instructions. 
-Link -> `https://python-poetry.org/`
+- Python 3.11.4 or newer: Make sure you have Python installed on your system, recommended to use Pyenv for managing Python versions.
+- Poetry: Use Poetry for packaging and dependency management. Refer to the Poetry documentation for installation instructions. Link -> `https://python-poetry.org/`
 
 Clone the project: Clone the project repository and perform `poetry install` to install the required dependencies.
 
@@ -31,6 +34,11 @@ Example
 ```bash
 # Run all tests with browser UI
 HEADLESS=false poetry run pytest tests/test_demo.py -v
+```
+
+### Run Defined Test from Instruction (Mobile and Google Chrome)
+```bash
+HEADLESS=false poetry run pytest tests/test_ui.py::test_search_starcraftii_on_twitch -v -s -k "chromium and mobile"
 ```
 
 ### Run All UI Tests
@@ -55,3 +63,6 @@ poetry run pytest tests/test_demo.py -v -s -k <device_type>
 ```bash
 poetry run pytest tests/test_demo.py::test_search_starcraft_on_twitch -v
 ```
+
+## AI Assistance
+This project uses GitHub Copilot to assist in code generation and suggestions. Copilot helps speed up development by providing context-aware code completions and suggestions. Project used GPT-4.1 model.

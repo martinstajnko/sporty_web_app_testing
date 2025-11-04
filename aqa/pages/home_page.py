@@ -21,7 +21,7 @@ class HomePage:
         search_box = self.page.get_by_role("searchbox", name="Search Input")
         search_box.click()
         search_box.fill(query)
-        self.page.wait_for_timeout(300)
+        self.page.wait_for_timeout(500)
         search_box.press('ArrowDown')
         search_box.press("Enter")
 

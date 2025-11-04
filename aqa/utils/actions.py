@@ -1,3 +1,5 @@
+""" Module for common actions using Playwright. """
+
 from playwright.sync_api import Page
 
 from aqa.utils.enums import Urls, WaitStates
@@ -5,7 +7,7 @@ from aqa.utils.enums import Urls, WaitStates
 
 
 class Actions:
-    """ """
+    """ Common actions for interacting with web pages using Playwright. """
      
     def __init__(self, page: Page):
         """Initialize BasePage with a Playwright Page instance."""

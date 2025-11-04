@@ -51,7 +51,6 @@ def context(browser: Browser, device_type: DeviceType) -> BrowserContext:
     
     Automatically applies viewport and device emulation settings.
     """
-    # Get context options with properly nested viewport
     context_options = DeviceConfig.get_context_options(device_type)
     context = browser.new_context(**context_options)
     yield context

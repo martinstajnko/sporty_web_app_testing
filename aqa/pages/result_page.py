@@ -25,7 +25,6 @@ class ResultPage:
         Returns:
             List of stream link locators
         """
-        # This selector may need adjustment based on actual Twitch DOM
         streams = self.page.get_by_role("link").all()
         return streams
     
