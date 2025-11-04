@@ -11,6 +11,16 @@ Project contains UI test, using Playwright Framework.
 Main package is `aqa`, containing page objects, configuration, and utilities.
 Tests are located in the `tests` directory, and are organized to allow running by device type and browser.
 
+## Project Structure
+```plaintext
+├── tests/                   # Test cases
+│   ├── test_demo.py     # Sample UI test using Playwright
+├── aqa/                     # Automation framework code
+│   ├── pages/               # Page Object Models
+│   ├── config/              # Configuration files
+│   └── utils/               # Utility functions and classes
+```
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -37,16 +47,6 @@ poetry install
 ```bash
 poetry env activate
 source $(poetry env info --path)/bin/activate
-```
-
-## Project Structure
-```plaintext
-├── tests/                   # Test cases
-│   ├── test_demo.py     # Sample UI test using Playwright
-├── aqa/                     # Automation framework code
-│   ├── pages/               # Page Object Models
-│   ├── config/              # Configuration files
-│   └── utils/               # Utility functions and classes
 ```
 
 ## Running UI Tests
