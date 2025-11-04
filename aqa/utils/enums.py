@@ -1,4 +1,4 @@
-""" Enums for various constants used in the AQA framework."""
+"""Enums for various constants used in the AQA framework."""
 
 from enum import Enum
 
@@ -20,16 +20,16 @@ class Urls(Enum):
 
 
 class WaitStates(Enum):
-    LOAD = "load" #  Wait until the page load event fires (basic HTML loaded)
-    DOMCONTENTLOADED = "domcontentloaded" # Wait until DOM is fully parsed
-    NETWORKIDLE = "networkidle" # Wait until all network requests finish (images, API calls,...)
+    LOAD = "load"  #  Wait until the page load event fires (basic HTML loaded)
+    DOMCONTENTLOADED = "domcontentloaded"  # Wait until DOM is fully parsed
+    NETWORKIDLE = (
+        "networkidle"  # Wait until all network requests finish (images, API calls,...)
+    )
 
 
 class APIEndpoints(Enum):
     """Twitch API endpoints (example - replace with actual endpoints you're testing)."""
+
     SEARCH = "/api/search"
     STREAMS = "/api/streams"
     USERS = "/api/users"
-
-
-

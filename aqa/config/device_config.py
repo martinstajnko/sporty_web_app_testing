@@ -1,12 +1,13 @@
 """Device configuration for different viewports."""
-from typing import Dict, Any
+
+from typing import Any, Dict
 
 from aqa.utils.enums import DeviceType
 
 
 class DeviceConfig:
     """Provides device viewport configurations."""
-    
+
     CONFIGS = {
         DeviceType.DESKTOP: {
             "viewport": {
@@ -33,8 +34,10 @@ class DeviceConfig:
             "has_touch": True,
         },
     }
-    
+
     @staticmethod
     def get_context_options(device_type: DeviceType) -> Dict[str, Any]:
         """Get browser context options for device type."""
-        return DeviceConfig.CONFIGS.get(device_type, DeviceConfig.CONFIGS[DeviceType.DESKTOP])
+        return DeviceConfig.CONFIGS.get(
+            device_type, DeviceConfig.CONFIGS[DeviceType.DESKTOP]
+        )

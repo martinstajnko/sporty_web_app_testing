@@ -64,5 +64,32 @@ poetry run pytest tests/test_demo.py -v -s -k <device_type>
 poetry run pytest tests/test_demo.py::test_search_starcraft_on_twitch -v
 ```
 
+## Code Quality
+
+This project uses: 
+- **Ruff**: Fast linting and code formatting
+- **MyPy**: Static type checking
+
+### Format Code
+```bash
+# Format all code
+poetry run ruff format .
+
+# Check for linting issues
+poetry run ruff check .
+
+# Auto-fix issues where possible
+poetry run ruff check . --fix
+
+# Type checking
+poetry run mypy aqa/ tests/
+```
+
+### Optional - Pre-commit Quality Check Test Everything
+```bash
+# Run all checks before committing
+poetry run ruff format . && poetry run ruff check . && poetry run mypy aqa/ tests/
+```
+
 ## AI Assistance
 This project uses GitHub Copilot to assist in code generation and suggestions. Copilot helps speed up development by providing context-aware code completions and suggestions. Project used GPT-4.1 model.
