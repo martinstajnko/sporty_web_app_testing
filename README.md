@@ -11,21 +11,43 @@ Project contains UI test, using Playwright Framework.
 Main package is `aqa`, containing page objects, configuration, and utilities.
 Tests are located in the `tests` directory, and are organized to allow running by device type and browser.
 
-## Requirements
+## Setup Instructions
+
+### Prerequisites
 To be able to run test, ensure that you have the following:
 
+- git installed on your system.
 - Python 3.11.4 or newer: Make sure you have Python installed on your system, recommended to use Pyenv for managing Python versions.
 - Poetry: Use Poetry for packaging and dependency management. Refer to the Poetry documentation for installation instructions. Link -> `https://python-poetry.org/`
 
-Clone the project: Clone the project repository and perform `poetry install` to install the required dependencies.
+### Installation
+
+1. Clone the repository and navigate to the project directory:
+```bash
+git clone <repository-url>
+cd sporty_api_tests
+```
+
+2. Install dependencies:
+```bash
+poetry install
+```
+
+3. Activate the virtual environment (optional):
+```bash
+poetry env activate
+source $(poetry env info --path)/bin/activate
+```
 
 ## Project Structure
+```plaintext
 ├── tests/                   # Test cases
 │   ├── test_demo.py     # Sample UI test using Playwright
 ├── aqa/                     # Automation framework code
 │   ├── pages/               # Page Object Models
 │   ├── config/              # Configuration files
 │   └── utils/               # Utility functions and classes
+```
 
 ## Running UI Tests
 By default, tests run in headless mode (without browser UI). To run tests with a visible browser, set the `HEADLESS` environment variable to `false`. 
