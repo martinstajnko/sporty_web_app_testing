@@ -13,12 +13,22 @@ Tests are located in the `tests` directory, and are organized to allow running b
 
 ## Project Structure
 ```plaintext
-├── tests/                   # Test cases
-│   ├── test_demo.py     # Sample UI test using Playwright
-├── aqa/                     # Automation framework code
-│   ├── pages/               # Page Object Models
-│   ├── config/              # Configuration files
-│   └── utils/               # Utility functions and classes
+├── tests/                      # Test cases
+│   ├── test_demo.py            # Sample UI test using Playwright
+│   ├── conftest.py             # Pytest configuration and fixtures
+├── aqa/                        # Automation framework code
+│   ├── pages/                  # Page Object Models
+│   │   ├── home_page.py        # Home page object
+│   │   ├── profile_page.py     # Profile page object
+│   │   └── result_page.py      # Result page object
+│   ├── config/                 # Configuration files
+│   │   └── device_config.py    # Device configuration
+│   └── utils/                  # Utility functions and classes
+│       │── actions.py          # Action functions
+│       └── enums.py            # Enumeration definitions
+├── README.md                   # Project documentation
+├── pyproject.toml              # Poetry configuration file
+├── poetry.lock                 # Poetry lock file
 ```
 
 ## Setup Instructions
