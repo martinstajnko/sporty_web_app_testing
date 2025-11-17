@@ -1,4 +1,4 @@
-# Sporty Home Test: Web App Testing 
+# Playwright with Python: UI Testing Demo
 
 ## 🎥 Demo
 
